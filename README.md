@@ -7,21 +7,21 @@ The images are available directly from [https://index.docker.io](https://index.d
 
 ##Pre-Requisites
 
-- install fig [http://www.fig.sh/install.html](http://www.fig.sh/install.html)
+- install docker-compose [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 ##Usage
 
 Start a cluster:
 
-- ```fig up```
+- ```docker-compose up```
 
 Destroy a cluster:
 
-- ```fig stop```
+- ```docker-compose stop```
 
 Add more supervisors:
 
-- ```fig scale supervisor=3```
+- ```docker-compose scale supervisor=3```
 
 ##Building
 
@@ -29,7 +29,7 @@ Add more supervisors:
 
 ##FAQ
 ### How can I access Storm UI from my host?
-Take a look at fig.yml:
+Take a look at docker-compose.yml:
 
     ui:
       image: wurstmeister/storm-ui:0.9.2
@@ -61,7 +61,7 @@ Following the example above, after discovering the nimbus host IP (could be loca
     storm jar target/your-topology-fat-jar.jar com.your.package.AndTopology topology-name -c nimbus.host=192.168.59.103 -c nimbus.thrift.port=49627
 
 ### How can I connect to one of the containers?
-Find the forwarded ssh port for the container you wish to connect to (use `fig ps`)     
+Find the forwarded ssh port for the container you wish to connect to (use `docker-compose ps`)     
     	
     $ ssh root@`boot2docker ip` -p $CONTAINER_PORT 
  
