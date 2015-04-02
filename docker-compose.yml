@@ -15,6 +15,7 @@ nimbus:
 supervisor:
   image: wurstmeister/storm-supervisor
   ports:
+    - "2055:2055/udp"
     - "8000"
     - "22"
   links: 
